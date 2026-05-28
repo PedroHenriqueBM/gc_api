@@ -50,10 +50,19 @@ Requer [Docker](https://docs.docker.com/get-docker/) instalado.
 O modo é controlado pela variável de ambiente `MODE` passada na execução. O padrão é `production`.
 
 ```bash
-docker compose up -d --build                      # production (padrão)
-MODE=development docker compose up -d --build     # development
-MODE=production docker compose up -d --build      # production
+make up                      # sobe o container
+make start                   # inicia a API em production (padrão)
+make start MODE=development  # inicia a API em development
+make down                    # derruba o container
 ```
+
+Para rodar os testes dentro do container após ele estar no ar:
+
+```bash
+make test
+```
+
+Se os testes falharem, o container é derrubado automaticamente.
 
 ## Testes
 
