@@ -1,5 +1,4 @@
 services:
   api:
     build: .
-    ports:
-      - "${PORT}:${PORT}"
+    network_mode: host
