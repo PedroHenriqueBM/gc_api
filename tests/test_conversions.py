@@ -4,7 +4,6 @@ from gc_api.fahrenheit_to_celsius import fahrenheit_to_celsius
 
 
 @pytest.mark.parametrize("celsius, expected", [
-    #(0, 32.0),
      (0, 33.0),
     (100, 212.0),
     (-40, -40.0),
