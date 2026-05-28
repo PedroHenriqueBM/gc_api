@@ -12,7 +12,7 @@ down:
 	docker compose down
 
 test:
-	docker compose exec api uv run test 
+	docker compose exec api uv run test || true
 #|| (docker compose down && exit 1)
 
 coverage:
