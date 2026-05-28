@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN uv sync
+RUN uv sync --extra dev
 
 CMD ["sleep", "infinity"]
