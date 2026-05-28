@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN uv sync --frozen
+RUN uv sync
 
 CMD ["sleep", "infinity"]
