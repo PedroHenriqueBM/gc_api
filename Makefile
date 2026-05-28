@@ -4,7 +4,9 @@ up:
 	docker compose up -d --build
 
 start:
-	docker compose exec -d api sh -c "uv run base_code --mode $(MODE)" || (docker compose down && exit 1)
+	docker compose exec -d api sh -c "uv run base_code --mode $(MODE) || echo fail > /tmp/start_failed"
+	sleep 2
+	docker compose exec api sh -c "[ ! -f /tmp/start_failed ]" || (docker compose down && exit 1)
 
 down:
 	docker compose down

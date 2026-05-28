@@ -24,7 +24,7 @@ def convert_celsius_to_fahrenheit(value: float):
 
 def main():
 
-    raise Exception("stop")
+    
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", default="development", choices=["development", "production"])
