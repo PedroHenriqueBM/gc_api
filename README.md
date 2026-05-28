@@ -10,6 +10,7 @@ API REST para conversão de temperaturas entre Celsius e Fahrenheit, construída
 ## Instalação
 
 ```bash
+uv venv               # cria o ambiente virtual (.venv)
 uv sync               # dependências de produção
 uv sync --extra dev   # inclui pytest para testes
 ```
@@ -41,6 +42,18 @@ uv run base_code --mode=production
 
 A API estará disponível em `http://localhost:8000`.  
 Documentação interativa: `http://localhost:8000/docs`
+
+## Docker
+
+Requer [Docker](https://docs.docker.com/get-docker/) instalado.
+
+O modo é controlado pela variável de ambiente `MODE` passada na execução. O padrão é `production`.
+
+```bash
+docker compose up -d --build                      # production (padrão)
+MODE=development docker compose up -d --build     # development
+MODE=production docker compose up -d --build      # production
+```
 
 ## Testes
 
